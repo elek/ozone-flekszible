@@ -1,2 +1,0 @@
-- type: grafana/install-dashboard
-  configmap: ozone-dashboard
