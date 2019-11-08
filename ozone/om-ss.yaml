@@ -18,7 +18,8 @@ kind: StatefulSet
 metadata:
   name: om
   labels:
-    app.kubernetes.io/component: ozone
+    app: ozone
+    component: om
 spec:
   selector:
     matchLabels:

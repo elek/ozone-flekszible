@@ -18,7 +18,8 @@ kind: StatefulSet
 metadata:
   name: s3g
   labels:
-    app.kubernetes.io/component: ozone
+    app: ozone
+    component: s3g
 spec:
   selector:
     matchLabels:

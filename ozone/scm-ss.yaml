@@ -18,7 +18,8 @@ kind: StatefulSet
 metadata:
   name: scm
   labels:
-    app.kubernetes.io/component: ozone
+    app: ozone
+    component: scm
 spec:
   selector:
     matchLabels:
