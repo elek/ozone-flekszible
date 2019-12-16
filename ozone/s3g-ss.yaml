@@ -16,7 +16,7 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: s3g
+  name: ozone-s3g
   labels:
     app: ozone
     component: s3g
@@ -25,7 +25,7 @@ spec:
     matchLabels:
       app: ozone
       component: s3g
-  serviceName: s3g
+  serviceName: ozone-s3g
   replicas: 1
   template:
     metadata:
@@ -35,5 +35,5 @@ spec:
     spec:
       containers:
       - name: s3g
-        image: "@docker.image@"
+        image: "flokkr/ozone"
         args: ["ozone","s3g"]

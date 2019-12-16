@@ -16,7 +16,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: scm
+  name: ozone-scm
 spec:
   ports:
     - port: 9876

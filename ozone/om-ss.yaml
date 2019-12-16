@@ -16,7 +16,7 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: om
+  name: ozone-om
   labels:
     app: ozone
     component: om
@@ -25,7 +25,7 @@ spec:
     matchLabels:
       app: ozone
       component: om
-  serviceName: om
+  serviceName: ozone-om
   replicas: 1
   template:
     metadata:
@@ -39,16 +39,13 @@ spec:
     spec:
       initContainers:
       - name: init
-        image: elek/ozone
+        image: flokkr/ozone
         args: ["ozone","om","--init"]
         env:
         - name: WAITFOR
-          value: scm-0.scm:9876
+          value: ozone-scm-0.ozone-scm:9876
       containers:
       - name: om
-        image: "@docker.image@"
+        image: "flokkr/ozone"
         args: ["ozone","om"]
-        env:
-        - name: WAITFOR
-          value: scm-0.scm:9876
       volumes: []
