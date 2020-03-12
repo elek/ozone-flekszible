@@ -16,14 +16,13 @@
 name: ozone/memdisk
 description: Use memdisks for empty dirs
 ---
-transformations:
-  - type: Add
-    path:
+- type: Add
+  path:
       - spec
       - template
       - spec
       - volumes
       - data
       - emptyDir
-    value:
+  value:
       medium: Memory
